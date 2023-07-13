@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #030c2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > .main {
+  width: 700px;
+  height: 500px;
+  border: 1px solid red;
+  margin-top: 10px;
+  position: relative;
+}
+body > .main > .ball {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px white;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+}
+body > .main > .ball > .ball-small {
+  background-color: #eee;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+}
+
+/*# sourceMappingURL=master.css.map */
