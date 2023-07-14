@@ -6,6 +6,92 @@ $dark-white : #eee;
 
 // Repetitious codes
 
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// mixin or functions
+
+@mixin littles($name, $left) {
+    content: '';
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: $white;
+    opacity: .9;
+    position: absolute;
+    top: 40px;
+    left: $left+px;
+    z-index: 2;
+    animation: $name 2s infinite;
+}
+
+// animations
+
+@keyframes ball {
+    0% {
+        top: 0;
+    }
+
+    20% {
+        top: 205px;
+        border-bottom-right-radius: 10%;
+        border-bottom-left-radius: 10%;
+    }
+
+    30% {
+        top: 205px;
+    }
+
+    100% {
+        top: 0;
+        border-radius: 50%;
+    }
+}
+
+@keyframes smallball {
+    0% {
+        top: 0;
+    }
+
+    20% {
+        top: 50px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes underball {
+    50% {
+        width: 150px;
+        height: 60px;
+        top: 290px;
+        border-radius: 30px;
+    }
+
+
+    90% {
+        width: 170px;
+        height: 50px;
+        top: 305px;
+        border-radius: 10px;
+    }
+}
+
+@keyframes little1 {
+    to {
+        left: -50px;
+        opacity: 0;
+    }
+}
+
+@keyframes little2 {
+    to {
+        left: 150px;
+        opacity: 0;
+    }
 }

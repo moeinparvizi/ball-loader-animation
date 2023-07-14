@@ -4,6 +4,60 @@
   box-sizing: border-box;
 }
 
+@keyframes ball {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: 205px;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+  }
+  30% {
+    top: 205px;
+  }
+  100% {
+    top: 0;
+    border-radius: 50%;
+  }
+}
+@keyframes smallball {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes underball {
+  50% {
+    width: 150px;
+    height: 60px;
+    top: 290px;
+    border-radius: 30px;
+  }
+  90% {
+    width: 170px;
+    height: 50px;
+    top: 305px;
+    border-radius: 10px;
+  }
+}
+@keyframes little1 {
+  to {
+    left: -50px;
+    opacity: 0;
+  }
+}
+@keyframes little2 {
+  to {
+    left: 150px;
+    opacity: 0;
+  }
+}
 body {
   background-color: #030c2f;
   display: flex;
@@ -13,7 +67,6 @@ body {
 body > .main {
   width: 700px;
   height: 500px;
-  border: 1px solid red;
   margin-top: 10px;
   position: relative;
 }
@@ -22,10 +75,37 @@ body > .main > .ball {
   height: 100px;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 50px white;
   transform: translateX(-50%);
   position: absolute;
+  animation: ball 2s forwards infinite ease-in-out;
   left: 50%;
+}
+body > .main > .ball::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  top: 40px;
+  left: 90px;
+  z-index: 2;
+  animation: little2 2s infinite;
+}
+body > .main > .ball::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  z-index: 2;
+  animation: little1 2s infinite;
 }
 body > .main > .ball > .ball-small {
   background-color: #eee;
@@ -35,6 +115,27 @@ body > .main > .ball > .ball-small {
   transform: translateX(-50%);
   position: absolute;
   left: 50%;
+  animation: smallball 2s forwards infinite ease-in-out;
+}
+body > .main > span:nth-of-type(1) {
+  background-color: #9013fe;
+  width: 170px;
+  height: 50px;
+  position: absolute;
+  top: 305px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  animation: underball 2s forwards infinite ease-in-out;
+}
+body > .main > span:nth-of-type(2) {
+  background-color: #030c2f;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 330px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*# sourceMappingURL=master.css.map */
