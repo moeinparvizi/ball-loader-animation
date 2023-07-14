@@ -18,10 +18,7 @@ body{
             background-color: white;
             border-radius: 50%;
             box-shadow: 0 0 50px $white;
-            transform: translateX(-50%);
-            position: absolute;
-            animation: ball 2s forwards infinite ease-in-out;
-            left: 50%;
+            @include centeranimation(ball,1);
             &::after{
                 @include littles(little2,90)
             }
@@ -33,10 +30,7 @@ body{
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                left: 50%;
-                animation: smallball 2s forwards infinite ease-in-out;
+                @include centeranimation(smallball,1);
             }
         }
         >span{
@@ -45,21 +39,16 @@ body{
                 background-color: $purple;
                 width: 170px;
                 height: 50px;
-                position: absolute;
                 top: 305px;
-                left: 50%;
-                transform: translateX(-50%);
+                @include centeranimation(underball,1);
                 border-radius: 10px;
-                animation: underball 2s forwards infinite ease-in-out;
             }
             &:nth-of-type(2){
                 background-color: $background;
                 width: 200px;
                 height: 150px;
-                position: absolute;
                 top: 330px;
-                left: 50%;
-                transform: translateX(-50%);
+                @include centeranimation(0,0)
             }
         }
     }

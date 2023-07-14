@@ -28,6 +28,15 @@ $dark-white : #eee;
     animation: $name 2s infinite;
 }
 
+@mixin centeranimation($animationname,$a) {
+    transform: translateX(-50%);
+    position: absolute;
+    @if $a == 1 {
+        animation: $animationname 2s forwards infinite ease-in-out;
+    }
+    left: 50%;
+}
+
 // animations
 
 @keyframes ball {
